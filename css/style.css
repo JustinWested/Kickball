@@ -1,0 +1,202 @@
+  /* COLORS
+    sky blue #66a7e5
+    clouds #96bbe5 
+    grass #9da265*/
+
+
+
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+    font-family: 'Arvo', serif;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  background-image: url("/images/bodyborder.webp");
+  background-size: 100%;
+}
+
+header {
+  width: 100%;
+  height: 537px;
+  position: relative;
+  background-image: url("/images/background.webp");
+  background-size: 100% 537px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+header > *{
+  margin: 0 auto;
+}
+
+header img {
+  width: 200px;
+  height: auto;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+  background-color: #9da265;
+  margin: 10px auto;
+  padding: 20px;
+  width: fit-content;  
+  transition: all ease-in-out .4s;
+  font-size: 30px;
+}
+
+header a:hover {
+  color: white;
+}
+
+.kicker {
+  position: absolute;
+}
+
+.thigh {
+  position: absolute;
+  top: 300px;
+}
+
+.foot {
+  position: absolute;
+  top: 300px;
+  z-index: 2;
+}
+
+.ball {
+  position: absolute;
+  top: 425px;
+  left: 170px;
+  width: 80px;
+}
+
+.hill {
+  position: absolute;
+  width: 100%;
+  top: 450px;
+  z-index: 1;
+}
+
+.fa-bounce {
+  font-size: 40px;
+  position: fixed;
+  top: 92%;
+  left: 50%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+main {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  margin: 80px 20px;
+  background-color: #9da265;
+  z-index: 4;
+}
+
+section:nth-child(2n-1) {
+  flex-direction: row-reverse;
+}
+
+main img {
+  height: 307px;
+  margin: 40px;
+}
+
+main p {
+  margin: auto 20px;
+  font-size: .8rem;
+}
+
+main b {
+  font-size: 40px;
+  display: block;
+  padding-bottom: 20px;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+
+
+
+
+
+/* fit the example svg in the window, relatively size it */
+svg{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  /* learned about this technique to simulate sketching via css animating from Danny Chahla: https://github.com/dchahla  */
+  /* learned more about this via an article at CSS Tricks: https://css-tricks.com/svg-line-animation-works/ */
+  
+  path,
+  line,
+  polyline {
+  /* stroke-dasharray affects how long the stroke draw lines are, higher number looks more like drawing, lower number looks like a particle effect  */
+  
+    /* stroke-dasharray length helps to be longer than the paths which effectively hides the paths    */
+    stroke-dasharray: 2000;  
+  
+    /* moves the position of the dashes, which makes them animate-able */
+    stroke-dashoffset: 2000;
+    
+    /* remove "infinite" to have it draw only once */
+    animation: dash 4s infinite;
+    /* depending on the drawing, may need to use stroke-miterlimit to smooth out line segments that join at a sharp angle:  https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-miterlimit */
+    /*   stroke-miterlimit:10px; */
+  }
+  
+  /* the animation */
+  @keyframes dash {
+    to {
+      /* closing the offset makes the line appear to be drawn-in */
+      stroke-dashoffset: 0;
+    }
+  }
