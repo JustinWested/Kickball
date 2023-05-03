@@ -54,19 +54,28 @@ header img {
   height: auto;
 }
 
+.logo {
+  width: 300px;
+  height: auto;
+}
+
 header a {
   text-decoration: none;
-  color: black;
-  background-color: #9da265;
+  color: #e46e3f;
   margin: 10px auto;
-  padding: 20px;
+  padding: 10px;
   width: fit-content;  
   transition: all ease-in-out .4s;
   font-size: 30px;
+  -webkit-text-stroke: 2px #000000;
+  font-weight: 900;
+  font-size: 40px;
+  z-index: 10;
 }
 
 header a:hover {
   color: white;
+  text-shadow: 6px 6px 6px black;
 }
 
 .kicker {
@@ -75,27 +84,27 @@ header a:hover {
 
 .thigh {
   position: absolute;
-  top: 300px;
+  top: 350px;
 }
 
 .foot {
   position: absolute;
-  top: 300px;
+  top: 350px;
   z-index: 2;
 }
 
 .ball {
   position: absolute;
-  top: 425px;
+  top: 475px;
   left: 170px;
   width: 80px;
+  z-index: 15;
 }
 
 .hill {
   position: absolute;
   width: 100%;
-  top: 450px;
-  z-index: 1;
+  top: 470px;
 }
 
 .fa-bounce {
@@ -103,6 +112,8 @@ header a:hover {
   position: fixed;
   top: 92%;
   left: 50%;
+  z-index: 11;
+  text-shadow: 4px 4px 4px rgb(55, 94, 55);
 }
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -119,30 +130,45 @@ main {
 
 section {
   display: flex;
-  flex-direction: row;
+  position: relative;
+  flex-direction: row-reverse;
   margin: 80px 20px;
   background-color: #9da265;
   z-index: 4;
+  position: relative;
+  border-radius: 20px;
+  border: 20px solid black;
+  box-shadow: 10px 10px 5px rgb(36, 79, 50);
 }
 
 section:nth-child(2n-1) {
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 main img {
   height: 307px;
   margin: 40px;
+  border: 10px solid #944949;
+  border-radius: 20px;
+  box-shadow: 8px 8px 8px rgb(36, 79, 50);
+  transition: all 1s;
 }
+
+main img:hover {
+  box-shadow: none;
+}
+
+
 
 main p {
   margin: auto 20px;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 main b {
   font-size: 40px;
   display: block;
-  padding-bottom: 20px;
+  padding: 10px 0 20px 0;
 }
 
 /******************************************
