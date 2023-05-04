@@ -59,7 +59,7 @@ header img {
   height: auto;
 }
 
-header a {
+header a{
   text-decoration: none;
   color: #e46e3f;
   margin: 10px auto;
@@ -73,9 +73,24 @@ header a {
   z-index: 10;
 }
 
-header a:hover {
+header a:hover{
   color: white;
   text-shadow: 6px 6px 6px black;
+}
+
+footer {
+  text-align: center;
+  height: 40vh;
+}
+
+footer span {
+  margin: 0 auto;
+  font-size: 50px;
+  -webkit-text-stroke: 2px #000000;
+  font-weight: 900;
+  color: #e46e3f;
+  text-shadow: 5px 5px 5px black;
+
 }
 
 .kicker {
@@ -158,6 +173,18 @@ main img:hover {
   box-shadow: none;
 }
 
+.image-wrapper {
+  position: relative;
+}
+
+.svg-wrapper {
+  z-index: 9;
+  position: absolute;
+  height: 300px;
+  top: 35px;
+  left: 45px;  
+  pointer-events: none;
+}
 
 
 main p {
@@ -171,16 +198,6 @@ main b {
   padding: 10px 0 20px 0;
 }
 
-/******************************************
-/* LAYOUT
-/*******************************************/
-header {
-
-}
-
-footer {
-
-}
 
 /******************************************
 /* ADDITIONAL STYLES
@@ -193,30 +210,28 @@ footer {
 
 /* fit the example svg in the window, relatively size it */
 svg{
-    width: 50%;
     margin-left: auto;
     margin-right: auto;
     display: block;
   }
-  
   /* learned about this technique to simulate sketching via css animating from Danny Chahla: https://github.com/dchahla  */
   /* learned more about this via an article at CSS Tricks: https://css-tricks.com/svg-line-animation-works/ */
-  
   path,
   line,
   polyline {
-  /* stroke-dasharray affects how long the stroke draw lines are, higher number looks more like drawing, lower number looks like a particle effect  */
-  
+  /* stroke-dasharray affects how long the stroke draw lines are, higher number looks more like drawing, lower number looks like a particle effect  *
     /* stroke-dasharray length helps to be longer than the paths which effectively hides the paths    */
     stroke-dasharray: 2000;  
-  
     /* moves the position of the dashes, which makes them animate-able */
     stroke-dashoffset: 2000;
-    
     /* remove "infinite" to have it draw only once */
-    animation: dash 4s infinite;
-    /* depending on the drawing, may need to use stroke-miterlimit to smooth out line segments that join at a sharp angle:  https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-miterlimit */
+    /* depending on the drawing, may need to use stroke-miterlimit to smooth out line segments that join at a sharp angle (can also be adjusted in your image editor):  https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-miterlimit */
     /*   stroke-miterlimit:10px; */
+  }
+
+  .draw-animation {
+    animation: dash 4s;
+    animation-fill-mode: forwards;
   }
   
   /* the animation */
