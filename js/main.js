@@ -13,8 +13,8 @@ const observer = new IntersectionObserver(entries => {
       }
     });
   }, {
-    rootMargin: '-15% 0px -85% 0px'
-  });
+    rootMargin: window.innerWidth <= 768 ? '-55px 0px -45% 0px' : '-15% 0px -85% 0px'  
+});
   
   const svgs = document.querySelectorAll('.svg-wrapper svg');
   svgs.forEach(svg => observer.observe(svg));
