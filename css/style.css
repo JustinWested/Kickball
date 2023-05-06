@@ -44,26 +44,23 @@ header {
   display: flex;
   flex-direction: column;
   z-index: 2;
+  gap: 20px;
 }
 
+
+
 iframe {
-  width: 80%;
-  height: 80vh;
-  padding: 30px;
+  aspect-ratio: 16/9;
+  width: clamp(300px, 80vw, 850px);
+  height: fit-content;
 }
 
 header > *{
   margin: 0 auto;
 }
 
-header img {
-  width: 200px;
-  height: auto;
-}
-
 .logo {
-  width: 60vw;
-  height: auto;
+  width: clamp(300px, 60vw, 700px);
 }
 
 header a{
@@ -93,7 +90,7 @@ header span {
   -webkit-text-stroke: 1.5px #000000;
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 900;
-  text-shadow: 6px 6px 6px black;
+  text-shadow: 4px 4px 4px black;
   margin-top: auto;
   margin-bottom: 10px;
 }
@@ -160,6 +157,7 @@ footer span {
 main {
   width: 80%;
   margin: 0 auto;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -186,12 +184,6 @@ main img {
   margin: 40px;
   border: 10px solid #944949;
   border-radius: 20px;
-  box-shadow: 8px 8px 8px rgb(36, 79, 50);
-  transition: all 1s;
-}
-
-main img:hover {
-  box-shadow: none;
 }
 
 .image-wrapper {
@@ -202,10 +194,86 @@ main img:hover {
   z-index: 9;
   position: absolute;
   height: 300px;
-  top: 10%;
-  left: 15%;  
+  top: 38px;
+  left: 37px;  
   pointer-events: none;
   margin: 0;
+}
+
+.april .svg-wrapper {
+  left: 44px;
+  top: 44px;
+}
+
+.adam .svg-wrapper {
+  left: 48px;
+  top: 48px;
+}
+
+.chris .svg-wrapper{
+  left: 48px;
+  top: 44px;
+}
+
+.hollis .svg-wrapper {
+  left: 46px;
+  top: 45px;
+  scale: .95;
+}
+
+.lars .svg-wrapper {
+  left: 44px;
+  top: 44px;
+}
+
+.claude .svg-wrapper {
+  left: 45px;
+  top: 45px;
+  scale: .98s;
+}
+
+.alice .svg-wrapper{
+left: 44px;
+top: 44px;
+}
+
+.joe .svg-wrapper {
+  top: 43px;
+  left: 45px;
+  scale: .98;
+}
+
+.lani .svg-wrapper {
+  left: 45px;
+}
+
+.charles .svg-wrapper {
+  left: 45px;
+  top: 45px;
+}
+
+.sarah .svg-wrapper {
+  left: 45px;
+}
+
+.gabe .svg-wrapper {
+  left: 45px;
+}
+
+@media (max-width: 770px) {
+  .emma .svg-wrapper{
+    top: 18px;
+    left: 10px !important;
+  }
+
+  .svg-wrapper {
+    top: 16px !important;
+    left: 16.5px !important;
+  }
+}
+
+svg {
+  min-height: 300px;
 }
 
 
@@ -265,6 +333,10 @@ main b {
     margin: 5%;
   }
 
+  iframe {
+    width: 90%;
+    height: 260px;
+  }
 
 }
 
@@ -274,16 +346,6 @@ main b {
 /*******************************************/
 
 
-
-
-
-
-/* fit the example svg in the window, relatively size it */
-svg{
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
   /* learned about this technique to simulate sketching via css animating from Danny Chahla: https://github.com/dchahla  */
   /* learned more about this via an article at CSS Tricks: https://css-tricks.com/svg-line-animation-works/ */
   path,
@@ -291,16 +353,16 @@ svg{
   polyline {
   /* stroke-dasharray affects how long the stroke draw lines are, higher number looks more like drawing, lower number looks like a particle effect  *
     /* stroke-dasharray length helps to be longer than the paths which effectively hides the paths    */
-    stroke-dasharray: 2000;  
+    stroke-dasharray: 84000;  
     /* moves the position of the dashes, which makes them animate-able */
-    stroke-dashoffset: 2000;
+    stroke-dashoffset: 84000;
     /* remove "infinite" to have it draw only once */
     /* depending on the drawing, may need to use stroke-miterlimit to smooth out line segments that join at a sharp angle (can also be adjusted in your image editor):  https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-miterlimit */
     /*   stroke-miterlimit:10px; */
   }
 
   .draw-animation {
-    animation: dash 4s;
+    animation: dash 6s;
     animation-fill-mode: forwards;
   }
   
