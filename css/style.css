@@ -53,6 +53,7 @@ iframe {
   aspect-ratio: 16/9;
   width: clamp(300px, 80vw, 850px);
   height: fit-content;
+  border: none;
 }
 
 header > *{
@@ -296,6 +297,7 @@ main b {
     align-content: space-around;
     justify-content: space-around;
     gap: 0;
+    margin-bottom: 10px;
   }
 
   .vert-move {
