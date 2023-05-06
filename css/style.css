@@ -172,7 +172,7 @@ section {
   z-index: 4;
   position: relative;
   border-radius: 20px;
-  border: 20px solid black;
+  border: 13px solid black;
   box-shadow: 10px 10px 5px rgb(36, 79, 50);
 }
 
@@ -268,9 +268,15 @@ top: 44px;
   }
 
   .svg-wrapper {
-    top: 16px !important;
-    left: 16.5px !important;
+    top: 20px !important;
+    left: 22px !important;
+  } 
+  
+  .claude .svg-wrapper, 
+  .april .svg-wrapper {
+    top: 24px !important;
   }
+
 }
 
 svg {
@@ -289,7 +295,9 @@ main b {
   padding: 10px 0 20px 0;
 }
 
-
+aside {
+  width: clamp(300px, 80vw, 850px);
+}
 
 @media (max-width: 770px) {
   header{
