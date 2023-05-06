@@ -8,7 +8,7 @@
 /* Box Model Hack */
 * {
     box-sizing: border-box;
-    font-family: 'Arvo', serif;
+    font-family: 'Arvo', Arial, serif;
 }
 
 /* Clear fix hack */
