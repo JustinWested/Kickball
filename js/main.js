@@ -13,7 +13,7 @@ const observer = new IntersectionObserver(entries => {
       }
     });
   }, {
-    rootMargin: window.innerWidth <= 768 ? '-50px 0px -50% 0px' : '-40% 0px -60% 0px'  
+    rootMargin: window.innerWidth <= 768 ? '-90px 0px -80% 0px' : '-40% 0px -60% 0px'  
 });
   
   const svgs = document.querySelectorAll('.svg-wrapper svg');

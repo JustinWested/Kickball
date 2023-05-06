@@ -295,6 +295,7 @@ main b {
     display: flex;
     align-content: space-around;
     justify-content: space-around;
+    gap: 0;
   }
 
   .vert-move {
