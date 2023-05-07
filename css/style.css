@@ -263,18 +263,19 @@ top: 44px;
 
 @media (max-width: 770px) {
   .emma .svg-wrapper{
-    top: 18px;
-    left: 10px !important;
+    top: 10px !important;
+    left: 8px !important;
   }
 
   .svg-wrapper {
-    top: 20px !important;
-    left: 22px !important;
+    top: 15px !important;
+    left: 18px !important;
   } 
   
   .claude .svg-wrapper, 
   .april .svg-wrapper {
-    top: 24px !important;
+    top: 18px !important;
+    left: 16px !important;
   }
 
 }
@@ -347,6 +348,11 @@ aside {
   iframe {
     width: 90%;
     height: 260px;
+  }
+
+  .image-wrapper {
+    margin: 0 auto;
+    width: fit-content;
   }
 
 }
